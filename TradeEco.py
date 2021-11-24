@@ -26,7 +26,7 @@ response_hose = requests.get(url_hose)
 hose = pd.DataFrame.from_dict(pd.json_normalize(response_hose.json()), orient='columns')
 hose = hose[['Time','a','b','c','d','v','w','n']]
 hose = hose.nlargest(100, 'n')
-hose.to_csv('./Source Code/Trading-Vision/Data/Hose data.csv', mode = 'a', header = False, index = False)
+hose.to_csv('Hose data.csv', mode = 'a', header = False, index = False)
 
 url_upcom = ('https://banggia.cafef.vn/stockhandler.ashx?center=9')
 response_upcom = requests.get(url_upcom)
@@ -34,7 +34,7 @@ upcom = pd.DataFrame.from_dict(pd.json_normalize(response_upcom.json()), orient=
 upcom = upcom[['Time','a','b','c','d','v','w','n']]
 upcom = upcom.nlargest(100, 'n')
 #print(upcom)
-upcom.to_csv('./Source Code/Trading-Vision/Data/Upcom data.csv', mode = 'a', header = False, index = False)
+upcom.to_csv('Upcom data.csv', mode = 'a', header = False, index = False)
 
 url_hnx = ('https://banggia.cafef.vn/stockhandler.ashx?center=2')
 response_hnx = requests.get(url_hnx)
@@ -42,7 +42,7 @@ hnx = pd.DataFrame.from_dict(pd.json_normalize(response_hnx.json()), orient='col
 hnx = hnx[['Time','a','b','c','d','v','w','n']]
 hnx = hnx.nlargest(100, 'n')
 #print(hnx)
-hnx.to_csv('./Source Code/Trading-Vision/Data/HNX data.csv', mode = 'a', header = False, index = False)
+hnx.to_csv('HNX data.csv', mode = 'a', header = False, index = False)
 
 
     
